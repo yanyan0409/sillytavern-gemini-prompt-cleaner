@@ -1,0 +1,11 @@
+.gpc-settings .inline-drawer-content { padding: 8px 0; }
+.gpc-settings p { margin: 8px 0; line-height: 1.55; overflow-wrap: anywhere; }
+.gpc-settings .checkbox_label { margin: 8px 0; }
+.gpc-settings select, .gpc-settings textarea { width: 100%; margin: 5px 0 8px; }
+.gpc-settings textarea { resize: vertical; }
+.gpc-settings code { overflow-wrap: anywhere; }
+.gpc-settings .gpc-note { font-size: 0.9em; opacity: 0.8; }
+.gpc-settings .gpc-status { padding: 10px; margin: 10px 0; border: 1px solid var(--SmartThemeBorderColor, #666); border-radius: 8px; line-height: 1.55; }
+.gpc-settings details { margin: 12px 0; }
+.gpc-settings summary { cursor: pointer; margin-bottom: 8px; }
+.gpc-settings .menu_button { width: auto; min-height: 32px; }

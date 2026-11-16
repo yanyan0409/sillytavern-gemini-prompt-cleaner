@@ -1,0 +1,13 @@
+{
+    "display_name": "Gemini 提示词清理",
+    "loading_order": 9999,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "yanyan0409",
+    "version": "1.0.0",
+    "homePage": "https://github.com/yanyan0409/sillytavern-gemini-prompt-cleaner",
+    "auto_update": false,
+    "minimum_client_version": "1.13.0"
+}

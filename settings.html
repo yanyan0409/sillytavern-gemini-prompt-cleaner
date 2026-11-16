@@ -1,0 +1,40 @@
+<div id="gemini_prompt_cleaner_settings" class="gpc-settings">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>Gemini 提示词清理</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <p>发送前移除固定自述前缀 <code>This conversation is powered by</code>，保留后面的模型名和其他指令。</p>
+            <label class="checkbox_label"><input type="checkbox" data-gpc="enabled"><span>启用请求清理</span></label>
+            <label class="checkbox_label"><input type="checkbox" data-gpc="geminiOnly"><span>仅对 Gemini 生效（默认）</span></label>
+            <label for="gpc_scope">消息范围</label>
+            <select id="gpc_scope" class="text_pole" data-gpc="scope">
+                <option value="system">系统 / 开发者消息（推荐）</option>
+                <option value="all">系统、用户和助手消息（可能改变引用文本）</option>
+            </select>
+            <p class="gpc-note">默认识别 Gemini 模型名及 Google AI Studio / Vertex AI 来源。反代用了不含 Gemini 的模型别名时，可取消上面的限制。</p>
+            <div class="gpc-status" data-gpc="status" role="status" aria-live="polite">正在加载……</div>
+            <details>
+                <summary>本地规则预览</summary>
+                <label for="gpc_preview_input">输入一段提示词</label>
+                <textarea id="gpc_preview_input" class="text_pole" data-gpc="previewInput" rows="4" spellcheck="false">This conversation is powered by gemini-example.
+请保留角色设定，继续当前对话。</textarea>
+                <button type="button" class="menu_button" data-gpc="previewButton">预览清理结果</button>
+                <label for="gpc_preview_output">清理后</label>
+                <textarea id="gpc_preview_output" class="text_pole" data-gpc="previewOutput" rows="4" readonly></textarea>
+                <p class="gpc-note" data-gpc="previewStatus" role="status"></p>
+            </details>
+            <details>
+                <summary>403 / 429 报错解读</summary>
+                <label for="gpc_error_input">粘贴状态码或错误正文（请勿包含密钥）</label>
+                <textarea id="gpc_error_input" class="text_pole" data-gpc="errorInput" rows="4" spellcheck="false" placeholder="例如：429 RESOURCE_EXHAUSTED"></textarea>
+                <button type="button" class="menu_button" data-gpc="diagnoseButton">本地分析</button>
+                <p data-gpc="diagnosis" role="status"></p>
+            </details>
+            <button type="button" class="menu_button" data-gpc="clearButton">清空预览和错误文本</button>
+            <p class="gpc-note">聊天记录、角色卡和预设保持原样；预览及错误文本不保存、不上传。扩展不自动重试，也不会解除账号停用或提高配额。</p>
+            <p class="gpc-note">若没有命中，或反代在服务端重新注入此前缀，请检查反代配置。429 不能仅凭响应速度或缺少 Retry-After 判定为“假限流”。</p>
+        </div>
+    </div>
+</div>
